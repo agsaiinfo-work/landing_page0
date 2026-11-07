@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix AGS AI - Enterprise AI Agents",
+  "description": "Ultra-modern, glassmorphic dark-mode landing page for AGS AI featuring 24/7 autonomous agents, interactive demo simulation, bento metrics, and Arabic/English support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

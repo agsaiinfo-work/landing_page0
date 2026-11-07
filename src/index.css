@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-georgia: 'Georgia Pro', 'Georgia', 'Times New Roman', serif;
+    --font-primary: 'IBM Plex Sans Arabic', sans-serif;
+    
+    /* LIGHT MODE PALETTE */
+    --theme-bg: #FCFFFF;
+    --theme-text-heading: #12479e;
+    --theme-text-primary: #12479e;
+    --theme-text-secondary: #64748b;
+    --theme-accent: #12479e;
+    --theme-accent-hover: #0e387e;
+    --theme-card-bg: #FFFFFF;
+    --theme-card-border: rgba(18, 71, 158, 0.10);
+    --theme-input-bg: #f1f5f9;
+    --theme-navbar-bg: rgba(252, 255, 255, 0.92);
+  }
+
+  /* DARK MODE PALETTE */
+  html.dark,
+  body.dark,
+  .dark {
+    --theme-bg: #00063d;
+    --theme-text-heading: #FCFFFF;
+    --theme-text-primary: #FCFFFF;
+    --theme-text-secondary: #B9C2D6;
+    --theme-accent: #B9C2D6;
+    --theme-accent-hover: #ffffff;
+    --theme-card-bg: rgba(252, 255, 255, 0.04);
+    --theme-card-border: rgba(185, 194, 214, 0.15);
+    --theme-input-bg: rgba(255, 255, 255, 0.04);
+    --theme-navbar-bg: rgba(0, 6, 61, 0.92);
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: var(--font-primary) !important;
+  }
+
+  /* Typography Directive: All English text (Headings, Subtitles, Navigation, Card Titles, and Buttons) use 'Georgia Pro' */
+  html[lang="en"] body,
+  html[lang="en"] h1,
+  html[lang="en"] h2,
+  html[lang="en"] h3,
+  html[lang="en"] h4,
+  html[lang="en"] h5,
+  html[lang="en"] h6,
+  html[lang="en"] p,
+  html[lang="en"] span,
+  html[lang="en"] a,
+  html[lang="en"] button,
+  html[lang="en"] input,
+  html[lang="en"] select,
+  html[lang="en"] nav,
+  .font-georgia {
+    font-family: var(--font-georgia) !important;
+  }
+
+  /* Headings, Subtitles, Navigation, Card Titles, and Buttons */
+  h1, h2, h3, h4, h5, h6, nav, button, .nav-link, .card-title, .subtitle-text {
+    font-family: var(--font-georgia), var(--font-primary) !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text-secondary);
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #00063d;
+}
+::-webkit-scrollbar-track {
+  background: #FCFFFF;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(185, 194, 214, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(18, 71, 158, 0.25);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(185, 194, 214, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #12479e;
+}

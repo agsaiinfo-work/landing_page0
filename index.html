@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remix AGS AI - Enterprise AI Agents</title>
+    <meta name="description" content="Ultra-modern, glassmorphic dark-mode landing page for AGS AI featuring 24/7 autonomous agents, interactive demo simulation, bento metrics, and Arabic/English support." />
+    <meta property="og:title" content="Remix AGS AI - Enterprise AI Agents" />
+    <meta property="og:description" content="Ultra-modern, glassmorphic dark-mode landing page for AGS AI featuring 24/7 autonomous agents, interactive demo simulation, bento metrics, and Arabic/English support." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        try {
+          // Language detection
+          var savedLang = localStorage.getItem('ags_lang') || localStorage.getItem('language');
+          var lang = savedLang === 'ar' || savedLang === 'en' ? savedLang : null;
+          if (!lang) {
+            var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            lang = browserLang.indexOf('ar') === 0 ? 'ar' : 'en';
+          }
+          document.documentElement.lang = lang;
+          document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+          // Theme detection
+          var savedTheme = localStorage.getItem('ags_theme') || localStorage.getItem('theme');
+          var theme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : null;
+          if (!theme) {
+            var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+            theme = prefersLight ? 'light' : 'dark';
+          }
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="antialiased selection:bg-[#12479e]/25 selection:text-[#12479e] dark:selection:bg-blue-500/30 dark:selection:text-blue-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
